@@ -8,8 +8,11 @@ needs : npm, and docker
 
 # Running
 
-git clone https://github.com/afa7789/redis_nodes_experiment.git
-cd redis_nodes_experiment
-docker run --name my-redis-container -p 7001:6379 -d redis
-cd main_getter_writer_node
-node index.js
+`git clone https://github.com/afa7789/redis_nodes_experiment.git`
+`cd redis_nodes_experiment`
+`docker run --name my-redis-container -p 7001:6379 -d redis`
+`cd main_getter_writer_node`
+`node index.js`
+
+Agora para setar os bots que não fazem nada de especifico:
+

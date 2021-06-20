@@ -1,4 +1,7 @@
 const redis = require('redis');
+const { promisifyAll } = require('bluebird');
+
+promisifyAll(redis);
 
 const client = (url,port) => { 
 
@@ -16,9 +19,10 @@ const basic_on = (client) =>{
     });
 } 
 
-const set_value = (client,value) =>{
-    client.set("key",value)
+const read_value = async (client) =>{
+    return await client.getAsync('key');
 }
+
 
 const print_client = (client) => {
     return "<style>html{background:black}.json{font-size:20px;color:lightgreen}</style><pre class=\"json\">" + JSON.stringify(client,null,2) +"</pre>";
@@ -28,7 +32,7 @@ const redis_client = {
     client : client,
     basic_on: basic_on,
     print: print_client,
-    write: set_value
+    get_value: read_value
 } 
 
 module.exports = redis_client;

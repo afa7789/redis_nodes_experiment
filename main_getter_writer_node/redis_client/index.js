@@ -1,12 +1,14 @@
 const redis = require('redis');
 
-const client = () => { return redis.createClient({
-        host: process.env.REDIS_URL
+const client = () => { 
+
+    return redis.createClient({
+        host: process.env.REDIS_URL,
+        port: process.env.REDIS_PORT
     });
 };
 
 const on = (client) =>{
-    console.log("entrei",client);
     client.on('ready',function(){
         console.log('Redis ready');
     }).on('error', err => {
@@ -14,7 +16,16 @@ const on = (client) =>{
     });
 } 
 
-export const redis_client = {
+const print_client = (client) => {
+    console.log("CLIENT INFO HERE");
+    console.log(client);
+    console.log("CLIENT INFO HERE");
+}
+
+const redis_client = {
     client : client,
-    on: on
+    on: on,
+    print: print_client
 } 
+
+module.exports = redis_client;

@@ -4,7 +4,12 @@ Experimento de pub sub e escrita entre diferentes nodes com redis p/ avaliar via
 
 # Installing project
 
-needs : npm, and docker
+Précisa de ter instalado em sua máquina:
+- docker
+- npm
+- node
+
+Não foi testado em um MAC, mas é capaz que rode tbm.
 
 # Running
 

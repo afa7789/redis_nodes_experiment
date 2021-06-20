@@ -8,7 +8,7 @@ const client = () => {
     });
 };
 
-const on = (client) =>{
+const basic_on = (client) =>{
     client.on('ready',function(){
         console.log('Redis ready');
     }).on('error', err => {
@@ -17,14 +17,12 @@ const on = (client) =>{
 } 
 
 const print_client = (client) => {
-    console.log("CLIENT INFO HERE");
-    console.log(client);
-    console.log("CLIENT INFO HERE");
+    return "<style>html{background:black}.json{font-size:20px;color:lightgreen}</style><pre class=\"json\">" + JSON.stringify(client,null,2) +"</pre>";
 }
 
 const redis_client = {
     client : client,
-    on: on,
+    basic_on: basic_on,
     print: print_client
 } 
 

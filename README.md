@@ -1,6 +1,6 @@
 # Experimento NODES c/ Redis
 
-Experimento de pub sub e escrita entre diferentes nodes com redis p/ avaliar viabilidade de estrategia de distribuição de dados.
+Experimento de setar um valor em um nodo principal e pegar enntre diferentes nodes com redis o valor p/ avaliar viabilidade de estrategia de distribuição de dados.
 
 # Installing project
 

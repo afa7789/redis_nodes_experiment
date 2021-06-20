@@ -1,6 +1,6 @@
 # Experimento NODES c/ Redis
 
-![descrição visual da proposta simples](https://github.com/afa7789/redis_nodes_experiments/blob/main/resources/imagem_git.png?raw=true)
+![descrição visual da proposta simples](https://github.com/afa7789/redis_nodes_experiment/blob/main/resources/imagem_git.png?raw=true)
 
 Experimento de setar um valor em um nodo principal e pegar enntre diferentes nodes com redis o valor p/ avaliar viabilidade de estrategia de distribuição de dados.
 

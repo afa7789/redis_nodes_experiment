@@ -29,5 +29,6 @@ va para raiz do git
 `./setbots.sh 10`
 
 ele vai criar sites nos locahost de 3001 a 3011. 
+http://localhost:3001
 
 Sempre pulando o 3000.

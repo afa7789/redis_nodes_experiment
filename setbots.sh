@@ -7,25 +7,26 @@ case "`uname`" in
 	Darwin*) darwin=true ;;
 esac
 
-if $darwin; then
-	sedi="perl -i -pe";
-else
-	sedi="sed -i";
-fi
-
-openTerminal () {
-    stringcommand=$1
-    echo "entered here" 
-    echo COMMAND:$stringcommand
+create_run_bot () {
+    number=$1
+    ((number2=$number+3000))
     if $darwin; then
-        osascript -e 'tell app "Terminal" to do script "cd '$path' &&
-            '$stringcommand'
+        echo darwin
+        osascript -e 'tell app "Terminal" to do script "cd '$path';
+            cp -rf bot_node bot_node'$number';
+            cd bot_node'$number';
+            perl -i -pe "s/PORT=3001/PORT='$number2'/g" .env;
+            node index.js;
         "'
     else
-        gnome-terminal -- bash -c "$stringcommand"
+        echo linux
+        /usr/bin/gnome-terminal -- bash -c "cp -rf bot_node bot_node'$number';
+            cd bot_node$number; 
+            sed -i 's/PORT=3001/PORT='$number2'/g' .env;
+            node index.js;
+        "
     fi
 }
-
 
 if [[ -z $1 ]];then
     BOTNUM=3
@@ -35,5 +36,5 @@ fi
 echo bot number that will be turned on $BOTNUM
 
 for BOT_NUMBER in $(seq 1 $BOTNUM); do 
-    openTerminal "echo this is the botnumber $BOT_NUMBER"
+    create_run_bot $BOT_NUMBER
 done

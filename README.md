@@ -1,5 +1,7 @@
 # Experimento NODES c/ Redis
 
+![descrição visual da proposta simples](https://github.com/afa7789/redis_nodes_experiments/blob/master/resources/imagem_git.png?raw=true)
+
 Experimento de pub sub e escrita entre diferentes nodes com redis p/ avaliar viabilidade de estrategia de distribuição de dados.
 
 # Installing project
